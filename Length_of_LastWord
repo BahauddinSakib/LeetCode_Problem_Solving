@@ -1,0 +1,21 @@
+public class Solution {
+    public int LengthOfLastWord(string s) {
+
+        if(string.IsNullOrWhiteSpace(s)) return 0;
+        int len = 0;
+        string x = s.Trim();
+
+        for(int i =x.Length-1;i>=0;i--){
+              if(x[i] == ' '){
+                if(len>0){
+                    break;
+                }
+                
+              }else{
+                len++;
+              }
+        }
+        
+        return len;
+    }
+}
