@@ -1,0 +1,18 @@
+
+public class Solution {
+    public ListNode ReverseList(ListNode head) {
+        
+        ListNode prevPtr = null;
+        ListNode currPtr = head;
+        ListNode nextPtr;
+
+        while(currPtr!=null){
+            nextPtr= currPtr.next;
+            currPtr.next=prevPtr;
+            prevPtr=currPtr;
+            currPtr=nextPtr;
+        }
+        return prevPtr;
+    }
+     
+}
