@@ -1,0 +1,21 @@
+
+public class Solution {
+    public IList<int> InorderTraversal(TreeNode root) {
+        
+        List<int> list = new List<int>();
+        InorderTraversal(root,list);
+        return list;
+    }
+   
+    public IList<int> InorderTraversal(TreeNode root,IList<int> list)
+    {
+        if(root==null){
+            return list;
+        }
+        InorderTraversal(root.left,list);
+        list.Add(root.val);
+        InorderTraversal(root.right,list); //left->root->right
+        return list;
+
+    }
+  }
