@@ -1,0 +1,20 @@
+
+public class Solution {
+    public IList<int> PostorderTraversal(TreeNode root) {
+        
+        List<int> list = new List<int>();
+        PostorderTraversal(root,list);
+        return list;
+    }
+ public IList<int> PostorderTraversal(TreeNode root,IList<int>list){
+    if(root==null){
+        return list;
+    }
+   
+    PostorderTraversal(root.left,list);
+    PostorderTraversal(root.right,list);
+    list.Add(root.val);
+    return list;
+ }
+
+    }
