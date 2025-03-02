@@ -1,0 +1,23 @@
+
+public class Solution {
+    public IList<int> RightSideView(TreeNode root) {
+        
+        List<int>list = new List<int>();
+        RightSideView(root,0,list);
+        return list;
+    }
+     private void  RightSideView(TreeNode root,int depth,IList<int>list){
+        if(root==null){
+            return ;
+        }
+        if(list.Count==depth){
+            list.Add(root.val);
+        }
+      
+      RightSideView(root.right,depth+1,list);
+      RightSideView(root.left,depth+1,list);
+
+      //return list;
+     }
+
+    }
