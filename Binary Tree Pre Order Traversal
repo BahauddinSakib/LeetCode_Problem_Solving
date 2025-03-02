@@ -1,0 +1,21 @@
+
+public class Solution {
+    public IList<int> PreorderTraversal(TreeNode root) {
+        List<int> list = new List<int>();
+        PreorderTraversal(root,list);
+            return list;
+    }
+     public IList<int> PreorderTraversal(TreeNode root, IList<int> list){
+        
+        if(root==null){
+            return list;
+        }
+        list.Add(root.val);
+        PreorderTraversal(root.left,list);
+        PreorderTraversal(root.right,list);
+
+        return list;
+    }
+  }
+
+
