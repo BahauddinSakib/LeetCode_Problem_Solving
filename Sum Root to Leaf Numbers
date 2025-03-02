@@ -1,0 +1,25 @@
+
+public class Solution {
+    public int SumNumbers(TreeNode root) {
+         if(root==null){
+            return 0;
+         }
+          return SumNumbers(root,0);
+        }
+        private int SumNumbers(TreeNode root,int val){
+            if(root==null){
+                return 0;
+            }
+        
+
+        val = val*10 + root.val;
+    
+        if(root.left==null && root.right==null){
+            return val;
+        }
+        
+       return SumNumbers(root.left,val) + SumNumbers(root.right,val);
+  
+
+    }
+}
