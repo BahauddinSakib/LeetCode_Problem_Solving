@@ -1,0 +1,28 @@
+public class Solution {
+    public string LongestPalindrome(string s) {
+        
+        int resLen=0;
+        string res="";
+
+        for(int i=0;i<s.Length;i++){
+            for(int j=i;j<s.Length;j++){
+                int l=i,r=j;
+            
+               bool isPalindrome = true;
+         while(l<r){
+            if(s[l] != s[r]){
+                isPalindrome = false;
+                break;
+            }
+            l++;
+            r--;
+         }  
+        if(isPalindrome && (j-i+1)> resLen){
+            res = s.Substring(i,j-i+1);
+            resLen = j-i+1;
+        }
+            }
+        }
+        return res;
+}
+    }
