@@ -1,0 +1,23 @@
+public class Solution {
+    public int KthSmallest(TreeNode root, int k) {
+
+        int count =0;
+        int result = -1;
+
+    void Inorder(TreeNode node){
+        if(node==null || count>=k) return;
+
+        Inorder(node.left);
+
+        count++;
+        if(count==k){
+            result=node.val;
+            return ;
+        }
+        Inorder(node.right);
+    }
+    Inorder(root);
+    return result;
+        
+    }
+}
